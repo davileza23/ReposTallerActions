@@ -1,0 +1,16 @@
+name: 'Hola Mundo Docker action'
+description: Accion docker pasar parametros y devolver valores
+inputs:
+ who-to-greet:
+  description: 'Pasa parametro'
+  require: true
+  default: 'Caro'
+#salida
+outputs:
+time:
+    description: 'Hora que se ejecuta accion'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.who-to-greet }}
